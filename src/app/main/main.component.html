@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row mt-3">
+        <h2>Фильтры</h2>
+    </div>
+    <div class="row mt-2 mb-1">
+      <div class="col-4">
+        <p>Отсортировать по имени</p>
+      </div>
+      <div class="col-8">
+        <input type="text" [(ngModel)]="search_firstname" class="form-control">
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-4">
+        <p>Отсортировать по фамилии</p>
+      </div>
+      <div class="col-8">
+        <input type="text" [(ngModel)]="search_lastname" class="form-control">
+      </div>
+    </div>
+</div>
+    
+
+<h2>Пользователи</h2>
+<div class="container">
+  <div class="row">
+    <h6 class="col-2 pt-2">ID</h6>
+    <h6 class="col-2 pt-2">Имя</h6>
+    <h6 class="col-2 pt-2">Фамилия</h6>
+    <h6 class="col-2 pt-2">Телефон</h6>
+  </div>
+</div>
+
+<div class="container">
+  <app-person-view (delPerson)="personsService.onDeletePerson($event)"
+                   [inPerson]="person"
+                   *ngFor="let person of personsService.persons | filterFirstName:search_firstname | filterLastName:search_lastname">
+  </app-person-view> 
+</div>
+
+

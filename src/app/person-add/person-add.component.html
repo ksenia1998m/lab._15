@@ -1,0 +1,22 @@
+<div class="container">
+  <form [formGroup]="addForm" (ngSubmit)="onSave()">
+ 
+      <div class="col-8" style="margin: 0 auto;">
+        <h6>Введите имя</h6>
+        <input type="text" formControlName="firstname" class="form-control" placeholder="Имя">
+      </div><br>
+      <div class="col-8" style="margin: 0 auto;">
+        <h6>Введите фамилию</h6>
+        <input type="text" formControlName="lastname" class="form-control" placeholder="Фамилия">
+      </div><br>
+      <div class="col-8" style="margin: 0 auto;">
+        <h6>Введите номер телефона</h6>
+        <input type="text" [textMask]="{mask: mask}" formControlName="phone" class="form-control" placeholder="Номер телефона">
+      </div><br><br>
+
+      <div class="col-4" style=" margin-left: 790px;">
+        <button type="submit" [disabled]="addForm.invalid" class="btn btn-success">Сохранить</button>
+      
+    </div>
+  </form>
+</div>

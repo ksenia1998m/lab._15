@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-2 pt-2">{{inPerson.id}}
+  </div>
+  <div class="col-2 pt-2 pl-4">{{inPerson.firstname}}
+  </div>
+  <div class="col-2 pt-2 pl-4">{{inPerson.lastname}}
+  </div>
+  <div class="col-2 pt-2 pl-4">{{inPerson.phone}}
+  </div>
+ 
+  <div class="col-md-auto ml-10" style="margin-left: 115px;">
+      <a [routerLink]="['/edit', inPerson.id]">
+        <button class="btn btn-primary">Редактировать</button>
+      </a>
+      <button class="btn btn-danger m-2" (click)="onDeletePerson()">Удалить</button>
+    </div>
+</div>
+
